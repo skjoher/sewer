@@ -24,7 +24,7 @@ class AcmeDnsDns(common.BaseDns):
         self.logger.info("create_dns_record")
 
         resolver = Resolver(configure=False)
-        resolver.nameservers = ["8.8.8.8"]
+        resolver.nameservers = ["172.31.31.31"]
         answer = resolver.query("_acme-challenge.{0}.".format(domain_name), "TXT")
         subdomain, _ = str(answer.canonical_name).split(".", 1)
 
